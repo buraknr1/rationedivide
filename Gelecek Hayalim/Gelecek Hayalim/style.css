@@ -1,0 +1,526 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+}
+
+.container{
+    height: 670vh;
+    width: 100%;
+    background-color: #dae0f6;
+}
+
+.header{
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        #161c4dc7, 
+        #13154ec7),  url(img/kadin-haklari-nelerdir.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+/* #a96dc9c7, 
+#a627c2c7 */
+
+.logo-box{
+    position: fixed;
+    top: 30px;
+    left: 15px;
+}
+
+.text-box{
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    transform: translate(-50%, 50%);
+}
+
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+}
+
+.heading-primary-main{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.heading-primary-sub{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80%{
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80%{
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.heading-secondary{
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    color: #2b1462;
+    margin-top: 90px;
+}
+
+.heading-secondary:hover {
+    -webkit-transform: skewY(2deg) skewX(15deg) scale(1.1);
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+h2{
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    color: #314b34;
+}
+
+.world-map {
+    position: relative;
+    left: 95px;
+    height: 1014px;
+    width: 1600px;
+    z-index: 1;
+}
+
+.zoom-preview {
+    position: absolute;
+    transform: translate(-50%, -50%);  /* Ortaya hizala */
+    padding: 5px;
+    display: none;
+    z-index: 10;
+     /* Boyutunu ayarla */
+    height: auto;
+    cursor: pointer;
+}
+
+.zoomed-map {
+    width: 100%;  /* Görüntüyü sığdır */
+    height: auto;
+    object-fit: cover;
+}
+
+.blurred {
+    filter: blur(5px); /* Bulanıklık miktarını ayarla */
+}
+
+ /* Modal için CSS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 50%;
+    top: 50%;
+    width: 1600px; /* Ekranın %60'ını kaplar */
+    height: 800px; /* Ekranın %80'ini kaplar */
+    transform: translate(-50%, -50%);
+    background-image:  linear-gradient(
+        to right bottom, 
+        #e2edefe9, 
+        #acbbcef0), url(img/arkaplan-modal.jpg);
+    background-size: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 100; /* Bulanıklıktan etkilenmemesi için yüksek z-index */
+}
+
+.modal-content {
+    text-align: center;
+    color: black;
+}
+
+/* Yuvarlak profil resimleri */
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Profil container */
+.profile-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* Kişi kartı */
+.person {
+    text-align: center;
+    width: 350px;
+    height: 600px;
+    color: rgb(245, 244, 238);
+    background-color: #455545e2;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.person h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.person p {
+    font-size: 14px;
+    color: rgb(246, 245, 240);
+}
+
+.profile-btn {
+    background-color: #498d7f; /* Buton rengi */
+    color: white; /* Yazı rengi */
+    border: none; /* Çerçeve olmadan */
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-btn:hover {
+    background-color: #b2afcd; /* Hover durumunda buton rengi */
+}
+
+
+.close-button {
+    cursor: pointer;
+    font-size: 50px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+.blurred-background {
+    filter: blur(5px);
+    pointer-events: none; /* Arka plana tıklanmayı engelle */
+}
+
+.composition {
+    position: relative; 
+    margin-top: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.composition__photo {
+    width: 35%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem; 
+    padding: 20px;
+}
+.composition__photo--p1 {
+    left: 5%;
+    top: -2rem; 
+    background-color: #161616;
+    color: white;
+}
+.composition__photo--p2 {
+    right: 5%;
+    top: 2rem; 
+    background-color: #56655F;
+    color: white;
+}
+.composition__photo--p3 {
+    left: 30%;
+    top: 10rem; 
+    background-color: #3A3535;
+    color: white;
+}
+.composition__photo--p4{
+    left: 2%;
+    top: 40rem; 
+    background-color: #1B1714;
+    color: white;
+}
+.composition__photo--p5{
+    left: 25%;
+    top: 50rem; 
+    background-color: #3F3F63;
+    color: white;
+}
+.composition__photo--p6{
+    left: 55%;
+    top: 45rem; 
+    background-color: #849F41;
+    color: white;
+}
+.composition__photo:hover {
+    outline: 1.5rem solid #3fd2df;
+    transform: scale(1.1) translateY(-0.5rem);
+    box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+    z-index: 20; 
+}
+.composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); 
+}
+
+#composition{
+    position: relative;
+    text-align: center;
+    width: 400px;
+}
+
+.section-3{
+    padding: 20rem 0;
+    height: 120vh;
+    background-image: url(img/pexels-felixmittermeier-956981.jpg);
+    transform: skewY(-7deg);
+    margin-top: 115rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    padding-top: 110px;
+    padding-bottom: 1px;
+}
+.section-3 > * {
+    transform: skewY(7deg); 
+}
+
+.box {
+    background-image: linear-gradient(
+        to right bottom, 
+        #d8f2f3c7, 
+        #dbeae9c7), url(img/güçlü-kadın.png);
+    border: 1px solid #ddd;
+    padding:10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 400px;
+    height: 400px;
+}
+    
+.box h2 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: #071B33;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+    
+.box p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    color: #2d3d51;
+    font-style: italic;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.carousel {
+    position: relative;
+    margin-top: 15em;
+}
+.carousel__item {
+    height: 200px;
+    background: #FEF7F4;
+    padding: 1em;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-style: italic;
+    color: rgb(0, 2, 88);
+    display: none;
+}
+.carousel__item--selected {
+    display: block;
+}
+.carousel__nav{
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+.carousel__button {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background: rgba(85, 82, 177, 0.2);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.carousel__button--selected {
+    background-color: rgba(28, 11, 105, 0.5);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-evenly; /* Kutu aralıklarını düzenler */
+    align-items: center;
+    padding: 50px 0;
+    margin-top: 95px;
+    height: 350px;
+    background-color: #fef7f4;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0; /* Sağ kenar çizgisi */
+}
+
+.stat-box:last-child {
+    border-right: none; /* Son kutuya çizgi eklenmemesi */
+}
+
+.stat-box h2 {
+    font-size: 48px;
+    color: #1e2952; /* Sayıların rengi */
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 20px;
+    color: #6c757d; /* Açıklamanın rengi */
+}
+
+/* FOOTER */
+/* Footer General Styles */
+footer {
+    background-color: #191D4E;
+    color: #ecf0f1;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex-basis: 30%;
+    margin: 20px 0;
+}
+
+.footer-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ecf0f1;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-section a {
+    display: block;
+    margin: 10px 0;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f39c12;
+}
+
+/* Social Media Links */
+.footer-section .social a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+.footer-section .social a:hover {
+    background-color: #f39c12;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        flex-basis: 100%;
+    }
+}
+
