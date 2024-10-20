@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="90" height="16" fill="currentColor" class="logo" viewBox="0 0 16 16">
+                    <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m-.5 12.25V12h1v3.25a.75.75 0 0 0 1.5 0V12h1l-1-5v-.215a.285.285 0 0 1 .56-.078l.793 2.777a.711.711 0 1 0 1.364-.405l-1.065-3.461A3 3 0 0 0 8.784 3.5H7.216a3 3 0 0 0-2.868 2.118L3.283 9.079a.711.711 0 1 0 1.365.405l.793-2.777a.285.285 0 0 1 .56.078V7l-1 5h1v3.25a.75.75 0 0 0 1.5 0Z"/>
+                </svg>
+            </div>
+
+            <div class="text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary-main">Kadınların</span>
+                    <span class="heading-primary-sub">Gücü</span>
+                </h1>
+            </div>
+        </header>
+        <div class="map-container">
+            <img src="img/kıtalar2.png" usemap="#worldmap" alt="Dünya Haritası" class="world-map" id="main-map">
+            
+            <div class="zoom-preview" id="zoom-preview-na" style="display: none; top: 140%; left: 30%; width: 800px;",>
+                <img src="img/kuzey-amerika.png" alt="yakınlaştırılmış kuzey amerika" class="zoomed-map" id="zoomed-na">
+            </div>
+
+            <div class="zoom-preview" id="zoom-preview-sa" style="display: none; top: 170%; left: 35%; width: 450px;">
+                <img src="img/guney-amerika.png" alt="yakınlaştırılmış guney amerika" class="zoomed-map" id="zoomed-sa">
+            </div>
+
+            <div class="zoom-preview" id="zoom-preview-af" style="display: none; top: 170%; left: 50%; width: 600px;">
+                <img src="img/afrika.png" alt="yakınlaştırılmış afrika" class="zoomed-map" id="zoomed-af">
+            </div>
+
+            <div class="zoom-preview" id="zoom-preview-av" style="display: none; top: 120%; left: 50%; width: 600px;">
+                <img src="img/avrupa.png" alt="yakınlaştırılmış avrupa" class="zoomed-map" id="zoomed-av">
+            </div>
+
+            <div class="zoom-preview" id="zoom-preview-as" style="display: none; top: 120%; left: 75%; width: 800px;">
+                <img src="img/asya.png" alt="yakınlaştırılmış asya" class="zoomed-map" id="zoomed-as">
+            </div>
+
+            <div class="zoom-preview" id="zoom-preview-o" style="display: none; top: 170%; left: 75%; width: 800px;">
+                <img src="img/okyanusya.png" alt="yakınlaştırılmış okyanusya" class="zoomed-map" id="zoomed-o">
+            </div>
+
+            <map name="worldmap">
+                <area target="" alt="kuzey-amerika" title="kuzey-amerika" href="" coords="141,242,146,254,156,257,165,264,152,265,138,272,142,282,152,282,160,279,142,302,149,313,159,320,170,326,162,340,145,350,139,361,166,351,184,341,193,324,204,317,223,312,238,327,249,333,264,341,278,365,289,380,295,391,300,404,300,432,306,449,312,467,314,481,327,490,336,508,344,525,355,548,367,551,377,559,387,572,392,579,402,583,412,583,425,589,435,595,445,602,452,617,467,626,478,617,457,603,461,590,445,579,443,568,447,556,435,556,428,566,413,566,411,555,406,532,413,515,430,514,447,504,459,511,461,527,460,542,470,551,477,556,488,563,510,569,524,569,494,555,476,539,471,525,469,508,476,493,490,477,491,460,500,443,510,432,522,422,529,425,543,419,532,405,525,392,536,388,549,384,559,384,553,397,565,405,577,404,572,389,566,371,555,351,541,333,532,316,532,302,538,281,548,269,559,264,573,272,583,293,599,310,610,316,618,302,623,283,631,269,644,268,655,254,672,248,688,242,683,228,693,221,695,204,700,189,702,173,709,160,705,145,710,128,726,121,727,108,706,109,688,107,693,95,675,90,657,83,633,84,606,88,580,98,551,104,532,98,517,94,491,93,466,94,439,102,420,118,394,132,370,139,351,146,329,156,309,170,303,205,292,219,275,231,261,240,240,235,223,231,206,225,193,221,179,221,163,226" shape="poly" onmouseover="showZoomedImage('zoom-preview-na')" onmouseout="hideZoomedImage('zoom-preview-na')">
+                <area target="" alt="guney-amerika" title="guney-amerika" href="" coords="493,607,487,615,480,625,481,638,481,648,474,658,471,673,467,684,470,700,478,706,480,727,488,734,494,745,504,755,508,769,508,785,507,817,501,858,493,887,495,902,491,919,491,940,494,957,502,965,515,974,527,973,517,957,517,940,524,929,524,916,524,904,532,897,535,881,542,871,552,871,558,857,555,843,566,846,575,840,580,826,587,816,593,805,599,788,610,781,620,776,625,761,630,740,635,721,644,709,645,690,631,682,617,673,603,668,586,668,587,653,579,641,563,631,546,614,527,605,510,600" shape="poly" onmouseover="showZoomedImage('zoom-preview-sa')" onmouseout="hideZoomedImage('zoom-preview-sa')">
+                <area target="" alt="afrika" title="afrika" href="" coords="755,479,748,488,740,500,734,517,726,524,720,537,716,549,716,561,716,580,712,596,722,610,730,626,739,637,751,640,760,640,771,636,781,634,794,634,799,641,808,641,815,653,815,667,816,686,823,694,825,709,829,720,822,736,823,754,829,766,832,778,836,801,840,818,847,835,852,846,863,841,873,842,884,835,894,825,898,812,905,798,915,787,911,774,917,764,927,752,939,753,945,766,945,787,952,795,962,784,966,764,969,737,966,726,960,733,951,742,942,746,936,737,934,722,927,702,928,682,939,670,948,658,953,645,965,636,967,623,969,607,953,606,934,598,925,580,921,567,917,552,910,536,908,523,908,514,908,502,891,502,878,501,869,499,861,492,856,499,850,505,839,501,828,492,818,488,820,475,811,468,791,470,777,473" shape="poly" onmouseover="showZoomedImage('zoom-preview-af')" onmouseout="hideZoomedImage('zoom-preview-af')">
+                <area target="" alt="avrupa" title="avrupa" href="" coords="744,430,744,442,744,454,747,466,754,475,767,469,774,464,777,451,789,442,794,431,805,433,818,437,813,451,820,458,820,445,833,455,828,468,837,464,839,449,830,434,828,423,840,433,849,441,852,454,856,464,867,471,867,455,870,447,878,448,886,444,886,428,890,420,900,411,902,420,915,417,928,407,922,425,931,427,939,431,948,435,959,442,959,431,959,418,970,411,970,399,977,386,987,382,1003,382,1007,369,1006,352,1008,341,1018,325,1023,300,1024,281,1030,261,1033,250,1028,240,1013,236,1000,230,992,222,993,209,1001,195,1010,189,1024,184,1038,174,1040,162,1037,148,1031,128,1027,119,1016,113,994,113,979,113,963,120,960,130,976,131,992,130,1014,124,1013,167,990,188,977,206,983,220,986,229,997,243,984,243,967,242,956,244,942,244,928,246,911,242,894,226,880,218,863,168,876,147,881,134,867,128,850,128,830,131,815,141,823,156,842,173,864,223,850,231,836,240,833,259,823,270,816,279,809,290,799,294,799,310,796,318,804,327,815,322,826,328,815,334,811,346,812,356,801,361,789,371,780,362,774,349,771,334,768,322,726,274,720,263,706,260,690,263,686,274,695,287,707,287,717,284,729,286,740,301,750,315,755,324,751,334,757,342,751,349,743,354,737,362,739,371,747,375,753,366,760,385,765,400,768,409,767,419,757,426" shape="poly" onmouseover="showZoomedImage('zoom-preview-av')" onmouseout="hideZoomedImage('zoom-preview-av')">
+                <area target="" alt="asya" title="asya" href="" coords="876,449,876,460,882,467,891,471,903,473,912,469,912,483,908,493,909,505,910,519,916,529,923,541,927,553,930,565,934,575,937,589,941,596,951,592,967,589,978,583,990,573,1001,565,999,546,991,534,1004,531,1012,535,1025,534,1035,545,1042,553,1050,559,1053,573,1057,587,1062,601,1067,613,1077,627,1084,631,1090,624,1080,610,1083,596,1087,580,1094,566,1107,558,1117,551,1128,560,1138,580,1144,589,1146,606,1149,620,1151,628,1138,628,1145,648,1146,659,1161,679,1170,692,1179,699,1203,709,1220,712,1235,712,1245,722,1252,712,1267,702,1286,708,1303,705,1312,693,1312,674,1291,658,1275,654,1234,647,1241,638,1252,638,1261,627,1259,611,1258,597,1248,583,1247,568,1243,542,1245,527,1247,508,1257,498,1268,508,1282,501,1289,488,1306,484,1313,471,1319,452,1322,436,1334,435,1343,423,1332,411,1327,398,1327,378,1327,364,1323,354,1312,351,1309,341,1316,329,1336,320,1354,317,1370,319,1375,330,1368,343,1370,371,1365,382,1365,395,1378,378,1392,360,1398,345,1399,327,1411,319,1423,314,1439,304,1456,297,1463,282,1466,269,1477,273,1487,280,1501,272,1501,259,1484,252,1473,241,1480,224,1474,207,1449,211,1452,224,1440,231,1423,228,1408,230,1391,230,1382,221,1370,217,1353,208,1340,203,1347,189,1360,181,1344,176,1336,172,1319,170,1305,167,1299,179,1302,191,1305,203,1293,215,1276,213,1271,200,1261,193,1243,193,1224,193,1210,184,1216,174,1206,163,1192,156,1182,146,1175,138,1166,132,1155,125,1149,116,1139,106,1131,114,1124,126,1131,138,1141,143,1141,155,1134,163,1120,170,1107,176,1096,181,1087,197,1076,197,1061,203,1054,196,1044,197,1035,207,1028,222,1035,235,1038,242,1032,256,1027,268,1022,282,1022,300,1018,316,1013,330,1008,347,1010,358,1011,372,1007,381,993,381,981,378,974,392,974,403,976,412,969,420,977,433,983,446,980,454,977,470,964,464,964,452,960,440,942,435,932,437,926,444,915,442,905,436,892,442" shape="poly" onmouseover="showZoomedImage('zoom-preview-as')" onmouseout="hideZoomedImage('zoom-preview-as')">
+                <area target="" alt="okyanusya" title="okyanusya" href="" coords="1317,680,1317,696,1317,706,1317,714,1318,723,1318,736,1317,748,1307,748,1300,736,1300,723,1288,723,1276,723,1273,733,1269,740,1261,733,1252,741,1245,751,1240,765,1228,768,1215,774,1209,781,1206,789,1206,799,1211,812,1216,820,1218,832,1218,842,1219,852,1230,846,1243,844,1254,840,1264,833,1276,832,1286,833,1294,844,1301,853,1310,861,1319,871,1327,874,1327,893,1336,901,1343,890,1346,871,1349,856,1358,832,1366,830,1382,840,1396,854,1406,873,1414,893,1416,907,1414,919,1423,921,1433,911,1442,898,1452,887,1461,873,1452,854,1428,839,1404,829,1372,815,1367,793,1390,785,1416,783,1452,783,1465,764,1468,744,1431,718,1393,696,1359,672,1334,669" shape="poly" onmouseover="showZoomedImage('zoom-preview-o')" onmouseout="hideZoomedImage('zoom-preview-o')">
+            </map>
+        </div>
+
+        <!-- Modallar -->
+        <!-- Kuzey Amerika Modal -->
+        <div id="modal-na" class="modal">
+            <span class="close-button" onclick="closeModal('modal-na')">&times;</span>
+            <div class="modal-content">
+                <h2>Kuzey Amerika'da Teknolojide Öncü Kadınlar</h2>
+                <p>Bu bölümde Kuzey Amerika'daki öncü kadınlar hakkında bilgiler yer alacak.</p>
+                <!-- İstediğin kadar içerik ekleyebilirsin -->
+            </div>
+        </div>
+
+        <!-- Güney Amerika Modal -->
+        <div id="modal-sa" class="modal">
+            <span class="close-button" onclick="closeModal('modal-sa')">&times;</span>
+            <div class="modal-content">
+                <h2>Güney Amerika'da Teknolojide Öncü Kadınlar</h2>
+                <p>Bu bölümde Güney Amerika'daki öncü kadınlar hakkında bilgiler yer alacak.</p>
+                <!-- İstediğin kadar içerik ekleyebilirsin -->
+            </div>
+        </div>
+
+        <!-- Afrika Modal -->
+        <div id="modal-af" class="modal">
+            <span class="close-button" onclick="closeModal('modal-af')">&times;</span>
+            <div class="modal-content">
+                <h2>Afrika'da Teknolojide Öncü Kadınlar</h2>
+                <p>Bu bölümde Afrika'daki öncü kadınlar hakkında bilgiler yer alacak.</p>
+                <!-- İstediğin kadar içerik ekleyebilirsin -->
+            </div>
+        </div>
+
+        <!-- Avrupa Modal -->
+        <div id="modal-av" class="modal">
+            <span class="close-button" onclick="closeModal('modal-av')">&times;</span>
+            <div class="modal-content">
+                <h2>Avrupa'da Teknolojide Öncü Kadınlar</h2>
+                <p>Bu bölümde Avrupa'daki öncü kadınlar hakkında bilgiler yer alacak.</p>
+                <!-- İstediğin kadar içerik ekleyebilirsin -->
+            </div>
+        </div>
+
+        <!-- Asya Modal -->
+        <div id="modal-as" class="modal">
+            <span class="close-button" onclick="closeModal('modal-as')">&times;</span>
+            <div class="modal-content">
+                <h2>Asya'da Teknolojide Öncü Kadınlar</h2>
+                <p>Bu bölümde Asya'daki öncü kadınlar hakkında bilgiler yer alacak.</p>
+                <!-- İstediğin kadar içerik ekleyebilirsin -->
+            </div>
+        </div>
+
+        <!-- Okyanusya Modal -->
+        <div id="modal-o" class="modal">
+            <span class="close-button" onclick="closeModal('modal-o')">&times;</span>
+            <div class="modal-content">
+                <h2>Okyanusya'da Teknolojide Öncü Kadınlar</h2>
+                <p>Bu bölümde Okyanusya'daki öncü kadınlar hakkında bilgiler yer alacak.</p>
+                <!-- İstediğin kadar içerik ekleyebilirsin -->
+            </div>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
